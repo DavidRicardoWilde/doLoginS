@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//WebRoot/view/baseDevGroup.jsp=UTF-8
+encoding//WebRoot/view/baseModules.jsp=UTF-8
+encoding//WebRoot/view/login.jsp=UTF-8
+encoding//WebRoot/view/wx_account.jsp=UTF-8
+encoding//src/controller/BaseModulesService.java=UTF-8
+encoding//src/controller/TestJsonFile.java=UTF-8
+encoding//src/controller/UserService.java=UTF-8
+encoding//src/controller/WxPaccountService.java=UTF-8
+encoding//src/controller/baseDevGroupService.java=UTF-8
+encoding//src/model/BaseDAO.java=UTF-8
+encoding//src/model/BaseDevModulesBean.java=UTF-8
+encoding//src/model/WxAccountDAO.java=UTF-8

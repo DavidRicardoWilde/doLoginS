@@ -1,0 +1,118 @@
+
+@charset "UTF-8";
+
+body{
+background-color:#f3f3f3;
+}
+
+.input-block {
+display: block;
+width: 100%;
+}
+.auth-form-body p.small_notice {
+display: inline;
+padding: 0 10px;
+}
+
+.auth-form .note {
+color: #777777;
+margin: 15px 0;
+text-align: center;
+}
+
+label,
+.input_elm{
+font-size: 14px;
+}
+
+.input_elm{
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+background-color: #FFFFFF;
+background-position: right center;
+background-repeat: no-repeat;
+border: 1px solid #CCCCCC;
+-moz-border-radius:8px;
+-webkit-border-radius:8px;
+border-radius: 8px;
+-moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.075) inset;
+-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.075) inset;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset;
+color: #333333;
+outline: medium none;
+padding: 7px 8px;
+transition: all 0.15s ease-in 0s;
+vertical-align: middle;
+}
+
+.input_elm.focus,
+.input_elm:focus,
+.input_elm.hover,
+.input_elm:hover
+{
+border-color: #51A7E8;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(81, 167, 232, 0.5);
+}
+
+/*.button*/
+.button{
+background-image:url(../images/redbuttonbg.gif);
+border:1px solid #a0b3d6;
+border-radius:8px;
+cursor: hand;
+color:#fff;
+font-size:18px;
+font-weight: bold;
+text-shadow: 0 2px 0 #111;
+width:100%;
+height:100%;
+}
+
+.button:hover,
+.button:active
+{
+background-color: #DADADA;
+background-image: linear-gradient(#800, #f00);
+background-repeat: repeat-x;
+border-color: #CCCCCC #CCCCCC #B5B5B5;
+text-decoration: none;
+}
+.button:active,
+.button.selected,
+.button.zeroclipboard-is-active
+{
+background-color: #DADADA;
+background-image: linear-gradient(#800, #f00);
+border-color: #B5B5B5;
+box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15) inset;
+}
+
+/*div*/
+#header{
+width:1000px;
+height:78px;
+border: 0px;
+}
+
+#bd_bg{
+position: relative;
+width:1000px;
+height:600px;
+border: 0px solid #f00;
+background-color:#f3f3f3;
+background-image:url(../image/login_bg.jpg);
+background-repeat: no-repeat;
+}
+
+#bd_dlg{
+position: relative;
+width:450px;
+height:300px;
+top:-520px;
+left:450px;
+border: 1px solid #CCCCCC;
+background-color: rgba(255, 255, 255, 0.5);
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+

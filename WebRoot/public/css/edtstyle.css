@@ -1,0 +1,62 @@
+#fm{
+margin:0;
+padding:10px 30px;
+}
+
+.ftitle{
+font-size:14px;
+font-weight:bold;
+padding:5px 0;
+margin-bottom:10px;
+border-bottom:1px solid #ccc;
+}
+
+.datagrid-header{
+text-align:center;
+font-weight:bold;
+}
+
+.fitem{
+margin-bottom:5px;
+}
+
+.fitem label{
+font-size:12px;
+display:inline-block;
+width:80px;
+}
+
+.easyui-validatebox{
+width:170px;
+line-height:20px;
+height:20px;
+margin:0px;
+padding:0px 2px;
+border: 1px solid #D4D4D4;
+}
+
+.easyui-numberbox{
+width:170px;
+line-height:20px;
+height:20px;
+margin:0px;
+padding:0px 2px;
+border: 1px solid #D4D4D4;
+}
+.combo{width:170px;}
+
+/**/
+.online{
+color:#00AE28;
+}
+
+.outline{
+color:#BF0303;
+}
+
+body{font-family:"Lucida Grande",Verdana,Lucida,Arial,Helvetica,宋体,sans-serif;}
+
+/*表格中的修改、删除*/
+.opt_spn{cursor:pointer;}
+.opt_spn img{border:0px;}
+.datagrid-row-selected{background: none repeat scroll 0 0 #95B8E0;}

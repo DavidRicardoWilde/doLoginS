@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+validator.Checked=WebRoot/view/public/jquery.validate.msg_zh.js,WebRoot/view/jqueryTest,WebRoot/view/jquery/jquery.validate.msg_zh.js,WebRoot/view/jquery/jquery.min.js,WebRoot/public/jqueryTest,WebRoot/public/jquery,WebRoot/view/public/jquery.min.js
+validator.Unchecked=

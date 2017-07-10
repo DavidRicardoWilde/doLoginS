@@ -1,0 +1,55 @@
+
+
+<!-- auto-import="true" default-lazy="false">  -->
+
+<!-- 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="model">  
+	<class name="model.UserBean" table="base_user">
+		<id name="fid" column="fid">
+			<generator class="native" />
+		</id>
+		<property name="mgr_type"></property>
+		<property name="devgrp_id"></property>
+		<property name="isroot"></property>
+		<property name="fname"></property>
+		<property name="fpassword"></property>
+		<property name="email"></property>
+		<property name="tel"></property>
+	</class>
+</hibernate-mapping>
+
+ -->
+
+<!-- 
+<hibernate-mapping package="controller">
+	<class name="controller.UserBean" table="base_user">
+		<id name="fid" column="fid">
+			<generator class="native" />
+		</id>
+		<property name="mgr_type"></property>
+		<property name="devgrp_id"></property>
+		<property name="isroot"></property>
+		<property name="fname"></property>
+		<property name="fpassword"></property>
+		<property name="email"></property>
+		<property name="tel"></property>
+	</class>
+	
+	<class name="controller.User" table="user">
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<property name="username"></property>
+		<property name="password"></property>
+		<property name="address"></property>
+		<property name="zip"></property>
+		<property name="tel"></property>
+		<property name="realnaem"></property>
+		<property name="email"></property>
+	</class>
+</hibernate-mapping>
+ -->

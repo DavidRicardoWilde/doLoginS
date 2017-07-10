@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd" 
+>
+
+
+	<!-- 
+			<bean id="LoginAction" class="controller.LoginAction">
+		
+		<property name="insertSql" ref="insertSql"></property>
+		<property name="username" ref="username"></property>
+		<property name="password" ref="password"></property>
+
+	</bean> 
+	
+			<bean id="insertSql" class="model.InsertSql">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+		<bean id="CheckUser" class="controller.CheckUser">
+		<property name="insertSql" ref="insertSql"></property>
+
+	</bean>
+	 -->
+	<bean id="baseModulesPage" class="controller.BaseModulesService">
+	
+	</bean>
+
+	<bean id="logoutAction" class="controller.LogoutAction">
+	
+	</bean>
+
+	<bean id="userService" class="controller.UserService">
+		<property name="userDAO" ref="userDAO"></property>
+	</bean>
+	<!-- <bean id="UserService" class="controller.UserService">
+		<property name="insertSql" ref="insertSql"></property>
+	</bean> -->
+		
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/icg_iammig_db?useSSL=false"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="Yjtmbrnpttgngk6"></property>
+	</bean>
+	
+<!-- 
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<value>user.hbm.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+			</props>
+		</property>
+	</bean>
+
+ -->
+	
+	<bean id="wx_sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mappingResources">
+			<list>
+				<value>wx_accountTest.hbm.xml</value>
+				<value>baseModules.hbm.xml</value>
+				<value>baseDevGroup.hbm.xml</value>
+				<value>base_dev_modules.hbm.xml</value>
+				<value>devtype.hbm.xml</value>
+				<value>baseFeature.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- <prop key="hibernate.current_session_context_class">thread</prop> -->
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- <bean id="dataSourceTest"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/dospringhibernatef"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="Jiaowoxiaotie6"></property>
+	</bean> -->
+	
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="wx_sessionFactory" />
+	</bean>
+
+	
+	<bean id="testJsonFile" class="controller.TestJsonFile">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+	
+	<bean id="userDAO" class="model.UserDAO">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+
+	<!-- <bean id="insertSqlForAjax" class="controller.InsertSqlForAjax">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> -->
+
+	<bean id="wxAccountBean" class="model.WxAccountBean">
+	
+	</bean>
+	
+	<bean id="baseModulesBean" class="model.BaseModulesBean">
+	
+	</bean>
+	
+	<bean id="baseDevGroupBean" class="model.BaseDevGroupBean">
+	
+	</bean>
+	
+	<bean id="baseDevModulesBean" class="model.BaseDevModulesBean">
+	
+	</bean>
+	
+	<bean id="devTypeBean" class="model.DevTypeBean">
+	
+	</bean>
+	
+	<bean id="wxPaccountService" class="controller.WxPaccountService">
+		<property name="wxAccountDAOInf" ref="wxAccountDAO"></property>
+		<!-- <property name="wxAccountBean" ref="wxAccountBean"></property> -->
+	</bean>
+	
+	<bean id="devTypeService" class="controller.DevTypeService">
+		<property name="devTypeDAOInf" ref="devTypeDAO"></property>
+	</bean>
+	
+	<bean id="baseFeatureService" class="controller.BasefeatureService">
+		<property name="baseFeatureDAOInf" ref="baseFeatureDAO"></property>
+	</bean>
+	
+	<bean id="baseFeatureBean" class="model.BaseFeatureBean">
+	
+	</bean>
+	
+	<bean id="baseFeatureDAO" class="model.BaseFeatureDAO">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+	
+	<bean id="devTypeDAO" class="model.DevTypeDAO">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+	
+	<bean id="baseDevGroupService" class="controller.baseDevGroupService">
+		<property name="baseDevGroupDAOInf" ref="baseDevGroupDAO"></property>
+		<property name="baseModulesDAOInf" ref="baseModulesDAO"></property>
+		<property name="baseDevModulesDAOInf" ref="baseDevModulesDAO"></property>
+	</bean>
+	
+	<bean id="baseModulesService" class="controller.BaseModulesService">
+		<property name="baseModulesDAOInf" ref="baseModulesDAO"></property>
+	</bean>
+	
+	<bean id="baseDevModulesDAO" class="model.BaseDevModulesDAO">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+	
+	<bean id="baseDevGroupDAO" class="model.BaseDevGroupDAO">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+	
+	<bean id="baseModulesDAO" class="model.BaseModulesDAO">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+	
+	<bean id="wxAccountDAO" class="model.WxAccountDAO">
+		<property name="sessionFactory" ref="wx_sessionFactory"></property>
+	</bean>
+	
+	<aop:config>
+		<aop:pointcut id="dbOperateMethods" expression="execution(* model.*DAO.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="dbOperateMethods" />
+	</aop:config>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="sqlAssist" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="queryBySQL" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="queryList" propagation="REQUIRED" rollback-for="Exception"></tx:method>
+			<tx:method name="query" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="saveObjt" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="addObjt" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="modObjt" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="delObjt" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="*" propagation="SUPPORTS" read-only="true"></tx:method>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 
+		<bean id="transactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="target" ref="userDAO"/>
+		<property name="transactionAttributes" >
+			<props>
+				<prop key="insert">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	 -->
+	<tx:annotation-driven transaction-manager="transactionManager" /></beans>

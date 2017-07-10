@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="model">
+	<class name="model.WxAccountBean" table="base_wx_paccount">
+		<id name="fid" column="fid">
+			<generator class="native"></generator>
+		</id>
+		<property name="paccount"></property>
+		<property name="pnick"></property>
+		<property name="pname"></property>
+		<property name="url"></property>
+		<property name="token"></property>
+		<property name="appid"></property>
+		<property name="appsecret"></property>
+		<property name="access_token"></property>
+		<property name="expires_in"></property>
+		<property name="flast"></property>
+		<property name="enabled"></property>
+	</class>
+	
+	<class name="model.UserBean" table="base_user">
+		<id name="fid" column="fid">
+			<generator class="native" />
+		</id>
+		<property name="mgr_type"></property>
+		<property name="devgrp_id"></property>
+		<property name="isroot"></property>
+		<property name="fname"></property>
+		<property name="fpassword"></property>
+		<property name="email"></property>
+		<property name="tel"></property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="controller" extends="struts-default">
+		<action name="login" class="userService" method="login">
+			<result name="success">view/welcome.jsp</result>
+			<result name="input">view/login.jsp</result>
+		</action>
+		
+		<action name="logout" class="logoutAction">
+			<result name="goback">view/login.jsp</result>
+		</action>
+		
+		<action name="baseDevTypePage" class="devTypeService" method="showpage">
+			<result name="devtype">view/devtype.jsp</result>
+		</action>
+		
+		<action name="baseFeaturePage" class="baseFeatureService" method="showpage">
+			<result name="FeaturePage">/view/feature.jsp</result>
+		</action>
+			
+		<action name="ajaxTest" class= "CheckUser">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<!-- <param name="inputName">inputStreamTest -->
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="ajaxLogin" class= "userService" method="ajaxLogin">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="WxAccount" class="userService" method="wx_account">
+			<result name="wx_account">view/wx_account.jsp</result>
+		</action>
+		
+		<action name="testJson" class="wxAccountDAO" method="jsonData">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="featurePageData" class="baseFeatureService" method="getData">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="wxJson" class="wxPaccountService" method="wxJson">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="assitTest" class="wxPaccountService" method="checkDataForDevGrp">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="WxPaccountService" class="wxPaccountService">
+			<result name="wxpaccount">view/wx_account.jsp</result>
+		</action>
+		
+		<action name="switchData" class="wxPaccountService" method="switchData">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<!-- <param name="inputName">inputStreamTest -->
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="baseModulesPage" class="baseModulesService">
+			<result name="baseModules">view/baseModules.jsp</result>
+		</action>
+		
+		<action name="switchDevtype" class="devTypeService" method="switchfunct">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="switchModules" class="baseModulesService" method="switchModules">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="getDATA" class="baseModulesService" method="showPage">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="switchDevGrp" class="baseDevGroupService" method="switchDevGrp">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="baseDevGroupPage" class="baseDevGroupService" method="page">
+			<result name="baseDevGroup">view/baseDevGroup.jsp</result>
+		</action>
+		
+		<action name="getBaseDevGrpData" class="baseDevGroupService" method="showPage">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="getDevTypeData" class="devTypeService" method="getData">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="featureSwitch" class="baseFeatureService" method="switchFeature">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="featureSwitch" class="baseFeatureService" method="switchfunct">
+		
+		</action>
+		
+		<action name="devGrpSwitch" class="baseDevGroupService" method="switchModules">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package> 
+</struts>    
+ 

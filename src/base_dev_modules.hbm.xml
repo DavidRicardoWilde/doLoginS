@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="model">
+	<class name="model.BaseDevModulesBean" table="base_dev_modules">
+		<id name="fid" column="fid">
+			<generator class="native"></generator>
+		</id>
+		<property name="dm_type"></property>
+		<property name="dev_id"></property>
+		<property name="modulist"></property>
+	</class>
+</hibernate-mapping>
